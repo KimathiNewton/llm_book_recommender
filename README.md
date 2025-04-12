@@ -1,9 +1,39 @@
-## How word3vec works
+## Semantic Book Recommender Using LLMs
 
-* Skipgram architecture
+The LLM Semantic Book Recommender demonstrates how to build a semantic search system for book recommendations. The project utilizes pre-trained transformer models to generate vector embeddings from book metadata. By indexing these embeddings, the system efficiently returns recommendations that align with the user's search query—even if the phrasing does not match the dataset keywords directly.
 
-The way the word embeddings work is by taking all usages of each word in the training data, and trying to predict which words are likely to sorround it.
+## Features
+**[Notebooks/Data_Preprocessing.s](Notebooks/Data_Preprocessing)** Text data cleaning.This involved removing extraneous punctuation, stop words and normalizing text.
+** Notebooks/vector_search** Semantic (vector) search and how to build a vector database. This allows users to find the most similar books to a natural language query (e.g., "a book about a person seeking revenge"). Text data (book descriptions) is converted to vector embeddings using pre-trained transformer model. This process captures the semantic meaning of the text.
+** Notebooks/text_classification** Doing text classification using zero-shot classification in LLMs. This allows us to classify the books as "fiction" or "non-fiction", creating a facet that users can filter the books on.
+** Notebooks/Sentiment_Analysis** Doing sentiment analysis using LLMs and extracting the emotions from text. This will allow users to sort books by their tone, such as how suspenseful, joyful or sad the books are.
+** gradio_dashboard** Creating a web application using Gradio for users to get book recommendations .
 
-We start by transforming each of the words into words embeddings, but we then add positional vectors to this word embeddings, to indicate the position in the sentence. This weighted word embeddings are then fed into a mechanism called self attention. Self attention basically uses the information from the weighted word embedding to understand how much attention it needs to pay to the other words in the sentence in order to get the meaning of that word.
-The model creates these self attention vectors for each word multiple times and then averages it. Then the model does some normalization which makes it easier to work with these attention vectors.
-The process of generating self attention vector and then normalizing them is called an encoder vector. 
+**[Notebooks/vector_search.]
+
+## Installation
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/KimathiNewton/llm_book_recommender.git
+   cd llm_book_recommender
+  ```
+
+2.Create a Virtual Environment (Recommended):
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+```
+Install Dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+### Usage
+The repository includes a Gradio-based dashboard to interact with the recommender system. To launch the dashboard, run:
+
+```bash
+python gradio_dashboard.py
+```
+This command will start a local web server. Open the provided URL in your browser and follow the instructions to input your preferences and see book recommendations.
