@@ -1,6 +1,11 @@
 ## Semantic Book Recommender Using LLMs
 
+![Interface](Images/Interface.png)
+
 The LLM Semantic Book Recommender demonstrates how to build a semantic search system for book recommendations. The project utilizes pre-trained transformer models to generate vector embeddings from book metadata. By indexing these embeddings, the system efficiently returns recommendations that align with the user's search query—even if the phrasing does not match the dataset keywords directly.
+
+![First query](Images/query1.png)
+![Second query](Images/query2.png)
 
 ## Features
 **[Notebooks/Data_Preprocessing](Notebooks/Data_Preprocessing.ipynb)** Text data cleaning.This involved removing extraneous punctuation, stop words and normalizing text.
