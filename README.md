@@ -4,20 +4,28 @@ The LLM Semantic Book Recommender demonstrates how to build a semantic search sy
 
 ## Features
 **[Notebooks/Data_Preprocessing](Notebooks/Data_Preprocessing.ipynb)** Text data cleaning.This involved removing extraneous punctuation, stop words and normalizing text.
+
+
 **[Notebooks/vector_search](Notebooks/vector_search.ipynb)** Semantic (vector) search and how to build a vector database. This allows users to find the most similar books to a natural language query (e.g., "a book about a person seeking revenge"). Text data (book descriptions) is converted to vector embeddings using pre-trained transformer model. This process captures the semantic meaning of the text.
+
+
 **[Notebooks/text_classification](Notebooks/text_classification.ipynb)** Doing text classification using zero-shot classification in LLMs. This allows us to classify the books as "fiction" or "non-fiction", creating a facet that users can filter the books on.
+
+
 **[Notebooks/Sentiment_Analysis](Notebooks/Sentiment_Analysis.ipynb)** Doing sentiment analysis using LLMs and extracting the emotions from text. This will allow users to sort books by their tone, such as how suspenseful, joyful or sad the books are.
+
+
 **[gradio_dashboard](gradio_dashboard.py)** Creating a web application using Gradio for users to get book recommendations .
 
 
 ## Installation
 
 1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/KimathiNewton/llm_book_recommender.git
-   cd llm_book_recommender
-  ```
-M"
+
+```bash
+git clone https://github.com/KimathiNewton/llm_book_recommender.git
+cd llm_book_recommender
+```
 
 ```bash
 python -m venv venv
